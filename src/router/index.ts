@@ -5,7 +5,15 @@ export const router = createRouter({
   routes: [
     {
       path: '/',
+      component: () => import('../layouts/demo.vue'),
       children: [
+        {
+          path: '',
+          component: () => import('../layouts/default.vue'),
+          beforeEnter: (to, from, next) => {
+            next("/home");
+          },
+        },
         {
           path: 'home',
           name: 'Home',
@@ -15,8 +23,26 @@ export const router = createRouter({
           path: 'custom',
           name: 'Custom',
           component: () => import('../views/CustomView.vue')
+        },
+      ]
+    },
+    {
+      path: '/404',
+      component: () => import('../layouts/default.vue'),
+      children: [
+        {
+          path: '',
+          name: 'Not Found',
+          component: () => import('../views/NotFound.vue')
         }
       ]
-    }
+    },
+    {
+      path: "/:pathMatch(.*)*",
+      component: () => import('../views/NotFound.vue'),
+      beforeEnter: (to, from, next) => {
+        next("/404");
+      },
+    },
   ]
 });
