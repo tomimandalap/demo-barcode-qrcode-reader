@@ -10,7 +10,7 @@ export const router = createRouter({
         {
           path: '',
           component: () => import('../layouts/default.vue'),
-          beforeEnter: (to, from, next) => {
+          beforeEnter: (_, __, next) => {
             next("/home");
           },
         },
@@ -40,7 +40,7 @@ export const router = createRouter({
     {
       path: "/:pathMatch(.*)*",
       component: () => import('../views/NotFound.vue'),
-      beforeEnter: (to, from, next) => {
+      beforeEnter: (_, __, next) => {
         next("/404");
       },
     },
