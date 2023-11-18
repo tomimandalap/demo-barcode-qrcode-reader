@@ -53,7 +53,7 @@ function onResult(result: Result | undefined) {
         <h3 v-if="!isLoading" class="font-medium mb-4">
           Barcode and QR code scanner
         </h3>
-        <StreamQrcodeBarcodeReader
+        <stream-qrcode-barcode-reader
           :capture="modeCapture"
           @onloading="onLoading"
           @result="onResult"
@@ -66,7 +66,7 @@ function onResult(result: Result | undefined) {
 
 <style lang="scss" scoped>
 .phone {
-  @apply relative h-full min-h-[812px] w-[375px] border-4 border-[#111] bg-gray-300/20 rounded-3xl;
+  @apply relative h-full w-[375px] border-4 border-[#111] bg-gray-300/20 rounded-3xl;
 
   & .container-notch {
     @apply absolute top-0 left-0 right-0 rounded-t-2xl;
