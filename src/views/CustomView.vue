@@ -3,7 +3,7 @@ import { ref } from "vue";
 
 import {
   StreamQrcodeBarcodeReader,
-  IconCameraVue,
+  IconCamera,
   type Result,
 } from "vue3-barcode-qrcode-reader";
 
@@ -70,7 +70,7 @@ function onResult(result: Result | undefined) {
                 class="bg-red-300 w-10 h-10 p-2 inline-flex justify-center items-center rounded-full"
                 @click="onChangeFacemode"
               >
-                <IconCameraVue />
+                <IconCamera />
               </button>
             </div>
           </template>
