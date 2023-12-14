@@ -3,14 +3,18 @@ import { RouterView, RouterLink } from "vue-router";
 </script>
 
 <template>
-  <nav class="bg-black h-12 w-full flex justify-center items-center text-white">
-    <RouterLink to="/home" v-slot="{ isActive }">
-      <span :class="{ underline: isActive }">Home</span>
+  <div class="flex flex-col justify-center items-center mt-6">
+    <h4 class="text-xl">Example:</h4>
+    <RouterLink to="/demo" v-slot="{ isActive }">
+      <span :class="{ underline: isActive }">Demo 1</span>
     </RouterLink>
-    <RouterLink to="/custom" v-slot="{ isActive }" class="ms-3">
-      <span :class="{ underline: isActive }">Custom</span>
+    <RouterLink to="/demo-slot" v-slot="{ isActive }">
+      <span :class="{ underline: isActive }">Demo 2</span>
     </RouterLink>
-  </nav>
+    <RouterLink to="/demo-ref" v-slot="{ isActive }">
+      <span :class="{ underline: isActive }">Demo 3</span>
+    </RouterLink>
+  </div>
 
   <div class="text-center my-10">
     <h1 class="md:text-2xl text-lg mb-4">Vue 3 barcode & qrcode reader</h1>

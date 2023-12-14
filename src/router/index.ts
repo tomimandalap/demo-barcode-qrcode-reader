@@ -11,18 +11,23 @@ export const router = createRouter({
           path: '',
           component: () => import('../layouts/default.vue'),
           beforeEnter: (_, __, next) => {
-            next("/home");
+            next("/demo");
           },
         },
         {
-          path: 'home',
-          name: 'Home',
-          component: () => import('../views/HomeView.vue')
+          path: 'demo',
+          name: 'Demo',
+          component: () => import('../views/Demo1.vue')
         },
         {
-          path: 'custom',
-          name: 'Custom',
-          component: () => import('../views/CustomView.vue')
+          path: 'demo-slot',
+          name: 'Demo Slot',
+          component: () => import('../views/Demo2.vue')
+        },
+        {
+          path: 'demo-ref',
+          name: 'Demo Ref',
+          component: () => import('../views/Demo3.vue')
         },
       ]
     },
